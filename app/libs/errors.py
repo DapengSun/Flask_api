@@ -56,3 +56,12 @@ class Success(APIException):
 
     def __init__(self, msg=None, code=None, error_code=None, header=None):
         super().__init__(msg=msg, code=code, error_code=error_code, header=header)
+
+
+class Error(APIException):
+    code = 500
+    msg = 'Error'
+    error_code = 500
+
+    def __init__(self, msg=None, code=None, error_code=None, header=None):
+        super().__init__(msg=msg, code=code, error_code=error_code, header=header)

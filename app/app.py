@@ -5,7 +5,7 @@ from app.models.bases import db
 
 def register_blueprints(app):
     from app.api.v1.test import test
-    from app.api.v1.client import client
+    from app.api.v1.user.client import client
     app.register_blueprint(test)
     app.register_blueprint(client)
 

@@ -13,6 +13,7 @@ pymysql = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-script = "*"
+flask-sqlacodegen = "*"
 
 [requires]
 python_version = "3.6"
