@@ -5,19 +5,15 @@ from app.models.bases import db
 
 def register_blueprints(app):
     from app.api.v1.test import test
-    from app.api.v1.user.client import client
+    from app.api.v1.user.user import user
     app.register_blueprint(test)
-    app.register_blueprint(client)
+    app.register_blueprint(user)
 
 
 def register_plugins(app):
     db.init_app(app)
     with app.app_context():
         db.create_all()
-
-
-def register_error_handler(app):
-    pass
 
 
 def create_app():

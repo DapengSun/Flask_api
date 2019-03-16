@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint
 
-client = Blueprint('client', __name__)
+user = Blueprint('user', __name__)

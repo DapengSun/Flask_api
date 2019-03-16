@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from app.models.bases import submit
+from app.models.bases import commit
+from app.models.users import Users
 
 
 class UserViewModel(object):
@@ -14,4 +15,11 @@ class UserViewModel(object):
         创建用户
         :return: true / false
         '''
-        return submit(self.user)
+        return commit(self.user)
+
+    def get_user(self):
+        '''
+        查询用户
+        :return:
+        '''
+        pass

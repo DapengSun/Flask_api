@@ -24,6 +24,7 @@ class ResBase(HTTPException):
             msg = self.description,
             data = self.data
         )
+
         resMsg = json.dumps(body,default=lambda obj:obj.__dict__)
         return resMsg
 

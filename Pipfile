@@ -14,6 +14,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-script = "*"
 flask-sqlacodegen = "*"
+flask-restplus = "*"
 
 [requires]
 python_version = "3.6"
