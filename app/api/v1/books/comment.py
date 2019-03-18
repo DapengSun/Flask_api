@@ -24,6 +24,7 @@ def get_book_comment(keyword):
     except Exception as ex:
         return Error(msg='获取图书评论异常',data=ex)
         pass
+    pass
 
 
 @book.route('/v1/book/commment',methods=['POST'])
