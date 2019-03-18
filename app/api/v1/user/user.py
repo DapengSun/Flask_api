@@ -7,7 +7,7 @@ from app.libs.errors_json import Success,Error
 from app.libs.enums import ClientTypeEnums
 from app.model_view.user import UserViewModel
 from app.models.users import Users
-from app.validators.forms import ClientForms, ClientEmailForms, ClientPhoneForms
+from app.validators.user_forms import ClientForms, ClientEmailForms, ClientPhoneForms
 from . import user
 
 
