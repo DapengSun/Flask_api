@@ -2,11 +2,10 @@
 
 from flask import Blueprint, request, json
 from sqlalchemy import or_
-
+from schema import Schema
 from app.libs.errors_json import Success,Error
 from app.libs.enums import ClientTypeEnums
 from app.model_view.user import UserViewModel
-from app.models.bases import db,commit
 from app.models.users import Users
 from app.validators.forms import ClientForms, ClientEmailForms, ClientPhoneForms
 from . import user
@@ -41,6 +40,7 @@ def get_user(userId):
     :return:
     '''
     try:
+        # userId = Schema(int).validate(userId)
         res = Users.query.filter(or_(Users.nickname == '13520387253',Users.email == 'dapeng@qq.com')).all()
 
         res_json = []

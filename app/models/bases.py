@@ -38,4 +38,3 @@ class ModelBase(db.Model):
             pass
         pass
     pass
-

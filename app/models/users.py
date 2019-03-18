@@ -48,35 +48,21 @@ class Users(ModelBase):
 
     @classmethod
     def to_json(cls,obj):
-        res_json = {
-            'id' : obj.id,
-            'account' : obj.account or '',
-            'nickname': obj.nickname or '',
-            'auth': obj.auth or '',
-            'password': obj.password or '',
-            'phone': obj.phone or '',
-            'email': obj.email or '',
-            'SysStatus': obj.SysStatus or '',
-            'CreateTime': obj.CreateTime or ''
-        }
-        return res_json
+        if obj:
+            res_json = {
+                'id' : obj.id,
+                'account' : obj.account or '',
+                'nickname': obj.nickname or '',
+                'auth': obj.auth or '',
+                'password': obj.password or '',
+                'phone': obj.phone or '',
+                'email': obj.email or '',
+                'SysStatus': obj.SysStatus or '',
+                'CreateTime': obj.CreateTime or ''
+            }
+            return res_json
+        else:
+            return ''
         pass
 
-
-class Comment(ModelBase):
-    __tablename__ = 'Comment'
-
-    ID = db.Column(db.Integer, primary_key=True)
-    DoubanFilmId = db.Column(db.String(50))
-    ReviewTitle = db.Column(db.String(200))
-    ReviewLink = db.Column(db.String(200))
-    ReviewAuthorAvatar = db.Column(db.String(200))
-    ReviewAuthorName = db.Column(db.String(200))
-    ReviewScore = db.Column(db.String(50))
-    ReviewDate = db.Column(db.DateTime)
-    ReviewContent = db.Column(db.String)
-    ReviewReturn = db.Column(db.Integer)
-    CDate = db.Column(db.DateTime)
-    ReviewScoreName = db.Column(db.String(50))
-    DoubanFilmReviewId = db.Column(db.String(50))
 
