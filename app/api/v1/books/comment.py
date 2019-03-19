@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import request
+from flask import request, current_app
 from sqlalchemy import and_, or_
 
 from app.model_view.comment import CommentViewModel
@@ -16,8 +16,12 @@ def get_book_comment(keyword):
     :return:
     '''
     try:
+        pageNum = int(request.args.get('pageNum') or current_app.config['PAGE_NUM'])
+        pageIndex = int(request.args.get('startPageNum') or current_app.config['PAGE_INDEX'])
+
         res = Comment.query.filter(or_(Comment.ReviewTitle.like(keyword + '%'),
-                                        Comment.ReviewAuthorName.like(keyword + '%'))).all()
+                                        Comment.ReviewAuthorName.like(keyword + '%')))\
+                            .limit(pageNum).slice((pageIndex - 1) * pageNum,pageIndex * pageNum)
         resList = []
         for item in res:
             resList.append(Comment.to_json(item))

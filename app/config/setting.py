@@ -11,3 +11,9 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 SQLALCHEMY_ECHO = True
 
 # JSON_AS_ASCII = False
+
+# 分页参数设定
+# 页面显示数量
+PAGE_NUM = 10
+# 起始页号
+PAGE_INDEX = 1
