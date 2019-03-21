@@ -16,6 +16,7 @@ flask-script = "*"
 flask-sqlacodegen = "*"
 flask-restplus = "*"
 schema = "*"
+flask-httpauth = "*"
 
 [requires]
 python_version = "3.6"

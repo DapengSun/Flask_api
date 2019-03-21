@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from flask import Blueprint, request, json
+from flask import Blueprint, request, json, g
 from sqlalchemy import or_
 from schema import Schema
 from app.libs.errors_json import Success,Error
 from app.libs.enums import ClientTypeEnums
 from app.model_view.user import UserViewModel
+from app.models.bases import auth
 from app.models.users import Users
 from app.validators.user_forms import ClientForms, ClientEmailForms, ClientPhoneForms
 from . import user
@@ -34,6 +35,7 @@ def create_user():
 
 
 @user.route('/v1/user/<int:userId>',methods=['GET'])
+@auth.login_required
 def get_user(userId):
     '''
     获取指定用户
@@ -78,6 +80,7 @@ def put_user(userId):
     except Exception as ex:
         return Error(msg=f'更新账号信息异常',data=ex)
     pass
+
 
 def create_user_by_email():
     '''

@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask_sqlalchemy import SQLAlchemy, BaseQuery
 from sqlalchemy import Column, DateTime, SmallInteger
+from flask_httpauth import HTTPBasicAuth
 
 db = SQLAlchemy()
-
+auth = HTTPBasicAuth()
 
 def commit(model):
     '''

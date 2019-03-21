@@ -17,3 +17,6 @@ SQLALCHEMY_ECHO = True
 PAGE_NUM = 10
 # 起始页号
 PAGE_INDEX = 1
+
+
+SECRET_KEY = 'key'

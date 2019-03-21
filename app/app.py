@@ -9,9 +9,11 @@ def register_blueprints(app):
     from app.api.v1.test.test import test
     from app.api.v1.user.user import user
     from app.api.v1.books.comment import book
+    from app.api.v1.token.token import token
     app.register_blueprint(test)
     app.register_blueprint(user)
     app.register_blueprint(book)
+    app.register_blueprint(token)
 
     # api = Api(app)
     # api.add_resource(TodoList, '/todos')
