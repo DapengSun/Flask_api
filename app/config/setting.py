@@ -18,5 +18,11 @@ PAGE_NUM = 10
 # 起始页号
 PAGE_INDEX = 1
 
-
+# 生成TOKEN秘钥
 SECRET_KEY = 'key'
+
+# POP3/SMTP配置
+# QQ邮箱授权码
+MAIL_AUTH_CODE = 'vmzzieiuwtjriijh'
+# QQ邮箱smtp服务器
+MAIL_HOST_SERVER = 'smtp.qq.com'

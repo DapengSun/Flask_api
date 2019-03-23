@@ -2,22 +2,24 @@
 import threading
 import time
 
-from werkzeug.local import Local, LocalStack
+class test(object):
+    s = 1
 
-a = LocalStack()
+    def __init__(self):
+        self.t = 2
+        pass
 
-a.push({'n':123})
+    @classmethod
+    def testFunc1(cls):
+        print(cls.s)
+        pass
 
-def func():
-    a.push({'c':456})
-    print(a)
-    print(a.top)
+    @staticmethod
+    def testFunc2():
+        pass
+    pass
 
-thread = threading.Thread(target=func)
-thread.start()
 
-time.sleep(1)
-
-print(a)
-print(a.top)
-
+test1 = test()
+test1.testFunc1()
+test.testFunc2()
