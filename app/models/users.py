@@ -2,9 +2,10 @@
 from flask import current_app
 from itsdangerous import SignatureExpired, BadSignature
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from sqlalchemy.orm import relationship
 from wtforms import ValidationError
 from app.models.bases import db, ModelBase,auth
-from sqlalchemy import Column, Integer, String, SmallInteger, create_engine, DateTime
+from sqlalchemy import Column, Integer, String, SmallInteger, create_engine, DateTime, ForeignKey
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
@@ -21,6 +22,7 @@ class Users(ModelBase):
     _password = Column('password',String(100))
     phone = Column('phone',String(20))
     email = Column('email',String(50))
+    department_id = Column(Integer,ForeignKey('Department.ID'))
 
     @property
     def password(self):

@@ -65,7 +65,6 @@ class MailSdk(object):
         msg["From"] = self.mailModel.SenderQQMail
         msg["To"] = self.mailModel.Receiver
 
-        msg = MIMEMultipart('related')
         content = MIMEText('<html><body><img src="cid:imageid" alt="imageid"></body></html>', 'html', 'utf-8')
         msg.attach(content)
 

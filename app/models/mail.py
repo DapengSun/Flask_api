@@ -16,6 +16,12 @@ class Mail(ModelBase):
     MailContent = Column(String(200))
     MailTitle = Column(String(50))
 
+    def __init__(self,**param_list):
+        for param in param_list.keys():
+            self.__setattr__(param,param_list[param])
+            pass
+        pass
+
     @property
     def receiver_to_list(self):
         '''
