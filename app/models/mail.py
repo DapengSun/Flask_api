@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from sqlalchemy import String, Column
+from sqlalchemy import String, Column, Integer, ForeignKey
 
 from app.model_view.mail import MailViewModel
 from app.models.bases import ModelBase

@@ -15,11 +15,12 @@ class Comment(ModelBase):
     ReviewAuthorName = Column(String(200))
     ReviewScore = Column(String(50))
     ReviewDate = Column(DateTime)
-    ReviewContent = Column(String)
+    ReviewContent = Column(String(300))
     ReviewReturn = Column(Integer)
     CDate = Column(DateTime)
     ReviewScoreName = Column(String(50))
     DoubanFilmReviewId = Column(String(50))
+
 
     @classmethod
     def to_json(cls, obj):

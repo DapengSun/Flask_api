@@ -8,6 +8,7 @@ from app.models import users
 from app.models import department
 from app.models.bases import db
 from app.models.mail import Mail
+from app.models.book import Book
 
 app = create_app()
 
@@ -34,5 +35,5 @@ def test_send_mail():
     pass
 
 if __name__ == '__main__':
-    # manager.run()
-    test_send_mail()
+    manager.run()
+    # test_send_mail()

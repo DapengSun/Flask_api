@@ -9,6 +9,7 @@ class Department(ModelBase):
 
     ID = Column(Integer,primary_key=True)
     Name = Column(String(30))
+    # TestColumn = Column(String(20))
 
     users = relationship('Users',backref='Department')
     pass
